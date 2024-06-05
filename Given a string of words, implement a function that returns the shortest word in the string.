@@ -1,0 +1,14 @@
+fn shortest_word(s: &str) -> &str
+{
+  
+    s.split_whitespace()
+        .filter(|word| !word.is_empty())
+        .min_by_key(|word| word.len())
+        .unwrap_or("")  // Return an empty string if the input string is empty
+}
+
+fn main() {
+    let sentence = "I use rust compiler";
+    let shortest = shortest_word(&sentence);
+    println!("The shortest word is: '{}'", shortest);
+}
