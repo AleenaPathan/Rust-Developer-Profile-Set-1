@@ -1,0 +1,16 @@
+fn max_subarray_sum(nums: &[i32]) -> i32 {
+    let mut max_sum = i32::MIN; 
+    let mut current_sum = 0;
+
+    for num in nums {
+        current_sum = current_sum.max(0) + num; 
+        max_sum = max_sum.max(current_sum); 
+    }
+
+    max_sum
+}
+
+fn main() {
+    let nums = vec![10, 20, 30, 40, 50, 60, 70, 80, 90];
+    println!("Maximum subarray sum: {}", max_subarray_sum(&nums));
+}
