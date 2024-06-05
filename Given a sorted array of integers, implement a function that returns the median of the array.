@@ -1,0 +1,28 @@
+fn find_median(arr: &[i32]) -> f64 {
+    let len = arr.len();
+    if len == 0 {
+        return f64::NAN; 
+    }
+
+    let mid_index = len / 2;
+    if len % 2 == 1 {
+
+        arr[mid_index] as f64
+    } else {
+        
+        let mid1 = arr[mid_index - 1];
+        let mid2 = arr[mid_index];
+        (mid1 as f64 + mid2 as f64) / 2.0
+    }
+}
+
+fn main() {
+    let sorted_array = [1, 2, 3, 4, 5, 6, 7];
+    println!("The median is: {}", find_median(&sorted_array));
+
+    let sorted_array_even = [1, 2, 3, 4, 5, 6];
+    println!("The median is: {}", find_median(&sorted_array_even));
+
+    let empty_array: [i32; 0] = [];
+    println!("The median is: {}", find_median(&empty_array));
+}
