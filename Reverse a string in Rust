@@ -1,0 +1,4 @@
+fn main() {
+    let foo = "relipmoctsur";
+    println!("{}", foo.chars().rev().collect::<String>());
+}
